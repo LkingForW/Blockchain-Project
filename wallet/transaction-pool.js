@@ -21,10 +21,11 @@ class TransactionPool {
         this.transactionMap  = transactionPoolMap;
     }
 
-    validTransactions(){ // this function returns an array of valid transactions from the pool
-         return  Object.values(this.transactionMap).filter(
-            (transaction)=> Transaction.validTransaction(transaction)
-        );
+
+    validTransactions() {
+      return Object.values(this.transactionMap).filter(
+        transaction => Transaction.validTransaction(transaction)
+      );
     }
 
     clear(){

@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "start": "node index.js",
-    "dev": "npm run start-redis && nodemon index.js",
+    "start": "npm run build-client & node index.js",
+    "dev": "npm run dev-client & npm run start-redis && nodemon index.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
     "start-redis": "redis-server --daemonize yes",
-    "stop-redis": "redis-cli shutdown"
+    "stop-redis": "redis-cli shutdown",
+    "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
+    "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
+    "clean": "rm -rf .cache client/dist"
   },
   "jest": {
     "testEnvironment": "node"
@@ -18,6 +21,8 @@
   "author": "Alain Perez",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
     "cross-env": "^7.0.3",
     "jest": "^23.6.0",
     "nodemon": "^2.0.7"
@@ -27,6 +32,11 @@
     "elliptic": "^6.5.4",
     "express": "^4.17.1",
     "hex-to-binary": "^1.0.1",
+    "parcel-bundler": "^1.12.5",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "redis": "^3.1.2",
     "request": "^2.88.2",
     "uuid": "^3.4.0"

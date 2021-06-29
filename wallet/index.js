@@ -1,6 +1,6 @@
 
 const {STARTING_BALANCE} = require('../config');
-const {ec} = require('../Utils/index');
+const {ec} = require('../Utils');
 const { cryptoHash } = require('../Utils');
 const Transaction = require('./transaction');
 
