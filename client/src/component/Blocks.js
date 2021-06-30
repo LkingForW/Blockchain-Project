@@ -1,48 +1,57 @@
-// This is the react component that will allows us to visuallize the blocks in the blockchain
-import React , {Component}  from 'react';
+import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Block from './Block';
-import {Link} from 'react-router-dom';
 
 class Blocks extends Component {
+  state = { blocks: [], paginatedId: 1, blocksLength: 0 };
 
-    state = {blocks: []}
+  componentDidMount() {
+    fetch(`${document.location.origin}/api/blocks/length`)
+      .then(response => response.json())
+      .then(json => this.setState({ blocksLength: json }));
 
-    componentDidMount(){
-        fetch(`${document.location.origin}/api/blocks`)
-        .then(response => response.json())
-        .then(json => this.setState({ blocks : json}));
+    this.fetchPaginatedBlocks(this.state.paginatedId)();
+  }
 
-    }
+  fetchPaginatedBlocks = paginatedId => () => {
+    fetch(`${document.location.origin}/api/blocks/${paginatedId}`)
+      .then(response => response.json())
+      .then(json => this.setState({ blocks: json }));
+  }
 
-    
+  render() {
+    console.log('this.state', this.state);
+      
+    return (
+      <div>
+        <div><Link to='/'>Home</Link></div>
+        <h3>Blocks</h3>
+        <div>
+          {
+            [...Array(Math.ceil(this.state.blocksLength/5)).keys()].map(key => {
+              const paginatedId = key+1;
 
-    render(){
-        let  count = -1;
-        console.log('this.state' , this.state);
-        return (
-            <div > 
-            <div><Link to='/'>Home</Link></div>
-            <h3>Blocks</h3>
-            {
-                this.state.blocks.map(block => {
-                    count += 1;
-                    return (
-                        <Block key={block.hash} block={block}/> //you pass on the block object to the component
-                        
-                    )
-                })
-            }
-            </div>
-            
-        );
-    }
-
-
+              return (
+                <span key={key} onClick={this.fetchPaginatedBlocks(paginatedId)}>
+                  <Button size="small" variant="danger">
+                    {paginatedId}
+                  </Button>{' '}
+                </span>
+              )
+            })
+          }
+        </div>
+        {
+          this.state.blocks.map(block => {
+            return (
+              <Block key={block.hash} block={block} />
+            );
+          })
+        }
+      </div>
+    );
+  }
 }
 
 export default Blocks;
-
-
-
-
-
