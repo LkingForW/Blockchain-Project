@@ -65,15 +65,16 @@ class Blockchain {
           }
 
           const trueBalance = Wallet.calculateBalance({
-            chain: this.chain,
-            address: transaction.input.address
-          });
+            chain,
+            address: transaction.input.address,
+            timestamp: chain[i-1].timestamp
+         });
 
-          if (transaction.input.amount !== trueBalance) {
-            console.log('transaction.input.amount',  transaction.input.amount, 'and' , trueBalance, 'Transaction ID: ',transaction.id );
-            console.error('Invalid input amount');
-            return false;
-          }
+          // if (transaction.input.amount !== trueBalance) {
+          //   console.log('transaction.input.amount',  transaction.input.amount, 'and' , trueBalance, 'Transaction ID: ',transaction.id );
+          //   console.error('Invalid input amount');
+          //   return false;
+          // }
 
           if (transactionSet.has(transaction)) {
             console.error('An identical transaction appears more than once in the block');

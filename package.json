@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "npm run build-client & node index.js",
-    "dev": "npm run dev-client & npm run start-redis && nodemon index.js",
-    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
+    "dev": "npm run dev-client & npm run start-redis && cross-env ENV='development' nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' cross-env ENV='development' nodemon index.js",
     "start-redis": "redis-server --daemonize yes",
     "stop-redis": "redis-cli shutdown",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",

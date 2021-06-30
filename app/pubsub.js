@@ -15,13 +15,13 @@ const CHANNELS = { // sets up the channels
 
 class PubSub {
 
-    constructor({blockchain , transactionPool}){
+    constructor({blockchain , transactionPool , redisUrl}){
 
         this.blockchain = blockchain;//NOTE: Each blockchain should be able to broadcast and replace in case that it is valid.
         this.transactionPool = transactionPool;
 
-        this.publisher = redis.createClient();
-        this.subscriber = redis.createClient();
+        this.publisher = redis.createClient(redisUrl);
+        this.subscriber = redis.createClient(redisUrl);
         
         this.subscribeToChannels(); //This will handle all of the channel subscribtions --> WHenever a new message is sent out, it will listen and update
         
