@@ -1,22 +1,99 @@
 # Blockchain Project
 
-### Description 
-
+## Description
 
 ## Features
-Subfeatures will be labeled as either [BE] Back End or [FR] Front End
-- Blockchain
-- Block
-- Transactions
-- Wallet
-- Application
-- Test Driven
+
+Sub-features will be labeled as either [BE] Back End or [FR] Front End
+
+- ### Blockchain
+
+  - Test Driven Approach [BE]
+  - Allows Chain replacement [BE]
+  - Validates chain and incoming chains [BE]
+  - Broadcasting chain on network [BE]
+  - Pagginated exploration of the Blocks within the chain [FE]
 
 
+- ### Block
 
+  - Test Driven Approach [BE]
+  - Genesis Block [BE]
+  - Functionality to mine block [BE]
+  - Sha-256 hash based of Block data [BE]
+  - Block Includes: Last Hash, Hash, Nonce, Difficulty, Transaction, Timestamp [BE]
+  - Displays Block Data in the front end [FE]
 
+- ### Transactions
 
+  - Main Transaction class consisting of output map and input map [BE]
+  - Validates Transactions [BE]
+  - In joint with Wallet class [BE]
+  - Covered edge Cases to prevent vulnerabilities ( invalid amount, insufficient funds) [BE]
+  - Reusable transaction component [FE]
+  - Post transaction throught frontend [FE]
+  - Known addresses are feautured in frontend and backend [BE] [FE]
 
+- ### Transaction Pool
 
+  - Core Transaction Pool class with ability to add transaction to the pool and set [BE]
+  - Through POST request, transactions are added to the pool [BE]
+  - Validation of transaction before passing to the pool [BE]
+  - Able to read Transaction Pool data through API GET request [BE]
+  - Synced transaction pool amongst all peers of the network [BE]
+  - Displays Pool from frontend [FE]
 
+- ### Transaction Miner
 
+  - Transaction Miner class handles how miners "mine" transaction to the blockchain [BE]
+  - Ability to grab valid transactions from the pool [BE]
+  - Only unique transactions are mined (no duplicates) [BE]
+  - Able to mine transaction through GET equest via API [BE]
+  - Validates incoming transaction balances [BE]
+  - Can mine from pool in frontend [FE]
+
+- ### Wallet
+
+  - Core wallet class [BE]
+  - cryptographic key pairs (public key) & (private key) using [Elliptic] [BE]
+  - Signiture generation & verification for transaction verification [BE]
+  - Calculates wallet balnce based on the chain history [BE]
+
+- ### Application
+  
+  - [Express] API allowing HTTP request [BE]
+  - Real-Time messaging network through [Redis] [BE]
+  - "Peers" are initiated through alternate ports [BE]
+  - Chain is synced when a new peer joins the network, new peers will have updated chain at moment of joining [BE]
+  - Serving front end page using [Express] [FE]
+  - Using React in the frontend using [parcel-bundler] [FE]
+  - Styling the application so its not barbones HTML [FE]
+  - Better Visualisation of the blocks from the chain [FE]
+  - Toggling transaction display [FE]
+  - Added routing for a multi-page application using [react-router-dom] [FE]
+
+- ### Proof of Work
+
+  - Proof of work system added, difficulty and nonce added to every block [BE]
+  - Smart scrypt that will adjust difficulty based on the MINE_RATE [BE]
+  - Hash 256 Incryptiong is in binary bit format for more accuracy on the difficulty [BE]
+  - Patched jump attack exploit by adding extra validation step on the blockchain [BE]
+
+- ### API
+
+  - /api/blocks
+  - /api/blocks/length
+  - /api/blocks/:id
+  - /api/mine
+  - /api/blocks
+  - /api/transact
+  - /api/transaction-pool-map
+  - /api/mine-transactions
+  - /api/wallet-info
+  - /api/known-addresses
+
+[Redis]: <https://redis.io/>
+[Express]: <https://expressjs.com/>
+[Elliptic]: <https://www.npmjs.com/package/elliptic>
+[parcel-bundler]: <https://www.npmjs.com/package/parcel-bundler>
+[react-router-dom]: <https://reactrouter.com/web/guides/quick-start>
