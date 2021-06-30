@@ -2,6 +2,15 @@
 
 ## Description
 
+This is a project description along with how to run it yourself localy if youd like to give it a go. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognise when there has been a change on a respective channel.
+
+  Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A
+
+  Node Live on Heroku: [Node 1]
+
+  Node Live on Heroku: [Node 2]
+  
+
 ## Features
 
 Sub-features will be labeled as either [BE] Back End or [FR] Front End
@@ -97,3 +106,6 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
 [Elliptic]: <https://www.npmjs.com/package/elliptic>
 [parcel-bundler]: <https://www.npmjs.com/package/parcel-bundler>
 [react-router-dom]: <https://reactrouter.com/web/guides/quick-start>
+[Preview]: <https://www.youtube.com/watch?v=xVQarGlAV2A>
+[Node 1]: <https://shrouded-escarpment-73920.herokuapp.com/>
+[Node 2]: <https://blooming-sands-21568.herokuapp.com/>
