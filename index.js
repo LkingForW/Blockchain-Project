@@ -17,15 +17,16 @@ const REDIS_URL = isDevelopment ?
 const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
 
-const app = express();
-const blockchain = new Blockchain();
-const transactionPool = new TransactionPool();
+//Variables 
+
+const app = express(); // host the express app
+const blockchain = new Blockchain(); //blockchain instance
+const transactionPool = new TransactionPool(); // transaction pool instance
 const wallet = new Wallet();
 const pubsub = new PubSub({ blockchain, transactionPool, redisUrl: REDIS_URL });
-
 const transactionMiner = new TransactionMiner({ blockchain, transactionPool, wallet, pubsub });
 
-app.use(express.json());
+app.use(express.json()); 
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/api/blocks', (req, res) => { // list of all of the blocks on the blockchain
@@ -51,8 +52,8 @@ app.get('/api/blocks/:id', (req, res) => { // this is the get request used to pa
   res.json(blocksReversed.slice(startIndex, endIndex));
 });
 
-app.post('/api/mine', (req, res) => {
-  const { data } = req.body;
+app.post('/api/mine', (req, res) => { //mines block with post request 
+  const { data } = req.body; // takes data from json body
 
   blockchain.addBlock({ data });
 
