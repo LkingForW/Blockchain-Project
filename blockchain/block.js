@@ -2,6 +2,7 @@ const { GENESIS_DATA, MINE_RATE } = require("../config");
 const {cryptoHash} = require('../Utils');
 const hexToBinary = require('hex-to-binary');
 
+//block class 
 class Block {
     constructor({timestamp,lastHash, hash,data,nonce , difficulty}){
         this.timestamp = timestamp;
@@ -12,10 +13,12 @@ class Block {
         this.difficulty = difficulty;
     }
     
+    //generates the genesis block
     static genesis(){
         return new this(GENESIS_DATA);
     }
 
+    //this will take in the previous block in the chain and create a new on with the incoming data
     static mineBlock({lastBlock , data}){
 
         const lastHash = lastBlock.hash;
@@ -32,7 +35,7 @@ class Block {
           // - > this is better because it allows for a more adjustable difficulty setting
 
 
-        return new this({
+        return new this({ //returns the newly created block
             timestamp,  
             lastHash,
             data ,
@@ -42,6 +45,7 @@ class Block {
         });
     }
 
+    //This will adjust the difficulty based on the mine rate of the application
     static adjustDifficulty({ originalBlock, timestamp }) {
     let { difficulty } = originalBlock;
 

@@ -6,7 +6,7 @@ const Transaction = require('./transaction');
 class Wallet {
 
     constructor(){
-        this.balance = STARTING_BALANCE;
+        this.balance = STARTING_BALANCE; //sets up the strating balance
         
         this.keyPair = ec.genKeyPair(); // -> This generates the key key pair from the "ec" function 
 
@@ -14,11 +14,11 @@ class Wallet {
         //graph, you must encode to hex for it to be understandable 
     }
 
-    sign(data){
+    sign(data){ //returns a cryptic hash from the data 
         return this.keyPair.sign(cryptoHash(data));
     }
 
-    createTransaction({recipient, amount , chain}){
+    createTransaction({recipient, amount , chain}){ //returns a transaction object
 
         if(chain){//if chain is defined, then it will calculate the balance
             this.balance = Wallet.calculateBalance({
@@ -38,6 +38,9 @@ class Wallet {
         });
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//            FUNCTION IS BUGGED AND NEEDS FIXING, NOT PROPERLY CALCULATIONG BALANCE                                              //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     static calculateBalance({ chain, address }) {
         let hasConductedTransaction = false;
         let outputsTotal = 0;

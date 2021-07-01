@@ -7,14 +7,14 @@ class Blocks extends Component {
   state = { blocks: [], paginatedId: 1, blocksLength: 0 };
 
   componentDidMount() {
-    fetch(`${document.location.origin}/api/blocks/length`)
+    fetch(`${document.location.origin}/api/blocks/length`) //gets the length of the chain
       .then(response => response.json())
       .then(json => this.setState({ blocksLength: json }));
 
-    this.fetchPaginatedBlocks(this.state.paginatedId)();
+    this.fetchPaginatedBlocks(this.state.paginatedId)(); //gets the paginated blocks
   }
 
-  fetchPaginatedBlocks = paginatedId => () => {
+  fetchPaginatedBlocks = paginatedId => () => { 
     fetch(`${document.location.origin}/api/blocks/${paginatedId}`)
       .then(response => response.json())
       .then(json => this.setState({ blocks: json }));
@@ -23,12 +23,12 @@ class Blocks extends Component {
   render() {
     console.log('this.state', this.state);
       
-    return (
+    return ( 
       <div>
         <div><Link to='/'>Home</Link></div>
         <h3>Blocks</h3>
         <div>
-          {
+          { //paginates
             [...Array(Math.ceil(this.state.blocksLength/5)).keys()].map(key => {
               const paginatedId = key+1;
 

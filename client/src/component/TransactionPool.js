@@ -7,15 +7,15 @@ import history from '../history';
 const POLL_INERVAL_MS = 10000;
 
 class TransactionPool extends Component {
-  state = { transactionPoolMap: {} };
+  state = { transactionPoolMap: {} }; //sets the transaction pool map 
 
-  fetchTransactionPoolMap = () => {
+  fetchTransactionPoolMap = () => {  //gets the transaction pool from the api and updates the state of the component.
     fetch(`${document.location.origin}/api/transaction-pool-map`)
       .then(response => response.json())
       .then(json => this.setState({ transactionPoolMap: json }));
   }
 
-  fetchMineTransactions = () => {
+  fetchMineTransactions = () => { //mines the transactions that are in the pool by making a call to the api
     fetch(`${document.location.origin}/api/mine-transactions`)
       .then(response => {
         if (response.status === 200) {
@@ -27,7 +27,7 @@ class TransactionPool extends Component {
       });
   }
 
-  componentDidMount() {
+  componentDidMount() { //will fetch transaction pool and the continously update the current state every 10 seconds
     this.fetchTransactionPoolMap();
 
     this.fetchPoolMapInterval = setInterval(
@@ -36,11 +36,11 @@ class TransactionPool extends Component {
     );
   }
 
-  componentWillUnmount() {
+  componentWillUnmount() { //stops the request from continously calling, this is from the interval set up above
     clearInterval(this.fetchPoolMapInterval);
   }
 
-  render() {
+  render() { //styles the component
     return (
       <div className='TransactionPool'>
         <div><Link to='/'>Home</Link></div>

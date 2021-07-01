@@ -8,8 +8,9 @@ import history from './history'
 import ConductTransaction from './component/ConductTransaction';
 import TransactionPool from './component/TransactionPool';
 
+//Everything must be conducted through a javascrypt file
 
-
+//The next part adds the components and creates the Paths for the application
 render(
      <Router history={history}>
           <Switch>

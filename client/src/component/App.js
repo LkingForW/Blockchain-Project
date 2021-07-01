@@ -10,6 +10,7 @@ class App extends Component{
         walletInfo: { }
     };
 
+    //Gets wallet info
     componentDidMount() { // fetch is how you proceed with get request in react. 
         fetch(`${document.location.origin}/api/wallet-info`).then((response)=>{
             response.json().then( json => { // a promise within a promise to obtain th json.
@@ -18,7 +19,7 @@ class App extends Component{
         });
     }
 
-    render() {
+    render() { //will handle styling for the aplplication while bringing in other components
         const {address , balance} = this.state.walletInfo;
         return (
             <div className='App'> 

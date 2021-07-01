@@ -57,18 +57,18 @@ app.post('/api/mine', (req, res) => { //mines block with post request
 
   blockchain.addBlock({ data });
 
-  pubsub.broadcastChain();
+  pubsub.broadcastChain(); //broadcasts the chain on the network
 
-  res.redirect('/api/blocks');
+  res.redirect('/api/blocks'); // redirects to blocks once request is over
 });
 
-app.post('/api/transact', (req, res) => {
+app.post('/api/transact', (req, res) => { // post request to process transaction
   const { amount, recipient } = req.body;
 
   let transaction = transactionPool
     .existingTransaction({ inputAddress: wallet.publicKey });
 
-  try {
+  try { // this will prevent multiple transactions within the sma epool. if a transaction already excist with that recipient then just add the amouns
     if (transaction) {
       transaction.update({ senderWallet: wallet, recipient, amount });
     } else {
@@ -82,24 +82,24 @@ app.post('/api/transact', (req, res) => {
     return res.status(400).json({ type: 'error', message: error.message });
   }
 
-  transactionPool.setTransaction(transaction);
+  transactionPool.setTransaction(transaction); // sets the transaction in the pool
 
-  pubsub.broadcastTransaction(transaction);
+  pubsub.broadcastTransaction(transaction); // broadcast the transaction to everyone
 
   res.json({ type: 'success', transaction });
 });
 
-app.get('/api/transaction-pool-map', (req, res) => {
+app.get('/api/transaction-pool-map', (req, res) => { // list all transactions in the pool map
   res.json(transactionPool.transactionMap);
 });
 
-app.get('/api/mine-transactions', (req, res) => {
+app.get('/api/mine-transactions', (req, res) => { // node mines all the transactions in the pool
   transactionMiner.mineTransactions();
 
-  res.redirect('/api/blocks');
+  res.redirect('/api/blocks'); //redirects to /api/blocks
 });
 
-app.get('/api/wallet-info', (req, res) => {
+app.get('/api/wallet-info', (req, res) => { //displays wallet info
   const address = wallet.publicKey;
 
   res.json({
@@ -108,7 +108,7 @@ app.get('/api/wallet-info', (req, res) => {
   });
 });
 
-app.get('/api/known-addresses', (req, res) => {
+app.get('/api/known-addresses', (req, res) => { // displays known addreses, all addreses that you hvae previously completed transactions with
   const addressMap = {};
 
   for (let block of blockchain.chain) {
@@ -122,11 +122,11 @@ app.get('/api/known-addresses', (req, res) => {
   res.json(Object.keys(addressMap));
 });
 
-app.get('*', (req, res) => {
+app.get('*', (req, res) => { // 
   res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
-const syncWithRootState = () => {
+const syncWithRootState = () => { // this will make sure that new nodes are up to date with the current chain
   request({ url: `${ROOT_NODE_ADDRESS}/api/blocks` }, (error, response, body) => {
     if (!error && response.statusCode === 200) {
       const rootChain = JSON.parse(body);
@@ -136,6 +136,7 @@ const syncWithRootState = () => {
     }
   });
 
+  //makes sure that the new nodes are also synced with the pool map
   request({ url: `${ROOT_NODE_ADDRESS}/api/transaction-pool-map` }, (error, response, body) => {
     if (!error && response.statusCode === 200) {
       const rootTransactionPoolMap = JSON.parse(body);
@@ -146,54 +147,14 @@ const syncWithRootState = () => {
   });
 };
 
-if (isDevelopment) {
-  const walletFoo = new Wallet();
-  const walletBar = new Wallet();
-
-  const generateWalletTransaction = ({ wallet, recipient, amount }) => {
-    const transaction = wallet.createTransaction({
-      recipient, amount, chain: blockchain.chain
-    });
-
-    transactionPool.setTransaction(transaction);
-  };
-
-  const walletAction = () => generateWalletTransaction({
-    wallet, recipient: walletFoo.publicKey, amount: 5
-  });
-
-  const walletFooAction = () => generateWalletTransaction({
-    wallet: walletFoo, recipient: walletBar.publicKey, amount: 10
-  });
-
-  const walletBarAction = () => generateWalletTransaction({
-    wallet: walletBar, recipient: wallet.publicKey, amount: 15
-  });
-
-  for (let i=0; i<10; i++) {
-    if (i%3 === 0) {
-      walletAction();
-      walletFooAction();
-    } else if (i%3 === 1) {
-      walletAction();
-      walletBarAction();
-    } else {
-      walletFooAction();
-      walletBarAction();
-    }
-
-    transactionMiner.mineTransactions();
-  }
-}
-
 let PEER_PORT;
 
-if (process.env.GENERATE_PEER_PORT === 'true') {
+if (process.env.GENERATE_PEER_PORT === 'true') { // this allows for the generation of peer nodes on the dev env
   PEER_PORT = DEFAULT_PORT + Math.ceil(Math.random() * 1000);
 }
 
-const PORT = process.env.PORT || PEER_PORT || DEFAULT_PORT;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || PEER_PORT || DEFAULT_PORT; //sets up the port
+app.listen(PORT, () => { //starts the client
   console.log(`listening at localhost:${PORT}`);
 
   if (PORT !== DEFAULT_PORT) {

@@ -10,7 +10,8 @@ const Transaction = ({transaction}) => { // getting the properties of the compon
             {
                 recipients.map(recipient => ( // this syntax mean that it will return this output jsx
                         <div key={recipient}>
-                            To: {`${recipient.substring(0,20)}...`} | Sent: {outputMap[recipient]}
+                            {/* Substrings the recipient address just so that its not long. */}
+                            To: {`${recipient.substring(0,20)}...`} | Sent: {outputMap[recipient]} 
                         </div>
                     )
                 )

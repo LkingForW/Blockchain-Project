@@ -1,3 +1,9 @@
+
+/*
+This file is for testing porpouses only and not to be considered as part of the project. The file showecases thediffernces 
+between proof of work in binary vr Hex.
+*/
+
 const Blockchain = require('../blockchain/index');
 
 const blockchain = new Blockchain();

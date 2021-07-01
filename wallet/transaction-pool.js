@@ -22,18 +22,18 @@ class TransactionPool {
     }
 
 
-    validTransactions() {
+    validTransactions() { //filters transaction map for valid transaction
       return Object.values(this.transactionMap).filter(
         transaction => Transaction.validTransaction(transaction)
       );
     }
 
-    clear(){
+    clear(){ // clears the transaction map
         this.transactionMap = {};
     }
 
 
-    clearBlockchainTransactions({ chain }) {
+    clearBlockchainTransactions({ chain }) { //clears transactions from the map that have already been added to the chain
         for (let i=1; i<chain.length; i++) {
           const block = chain[i];
     
