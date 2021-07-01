@@ -129,7 +129,6 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - /api/blocks/length
   - /api/blocks/:id
   - /api/mine
-  - /api/blocks
   - /api/transact
   - /api/transaction-pool-map
   - /api/mine-transactions
