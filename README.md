@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a project description along with how to run it yourself localy if youd like to give it a go. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognise when there has been a change on a respective channel.
+This is a blockchain programmed from scratch. Project description along with how to run it yourself localy if youd like to give it a go below. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognise when there has been a change on a respective channel.
 
   Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A
 
