@@ -2,13 +2,13 @@
 
 ## Description
 
-This is a blockchain programmed from scratch. Project description along with how to run it yourself localy if youd like to give it a go below. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognise when there has been a change on a respective channel.
+This is a blockchain programmed from scratch. Project description along with how to run it yourself locally if you’d like to give it a go below. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognize when there has been a change on a respective channel.
 
   Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A
 
-  Node Live on Heroku: [Node 1] -> Might have to open in Incognito Window 🤦‍♂️ 
+  Node Live on Heroku: [Node 1] -> Might have to open in Incognito Window 🤦‍♂‍ 
 
-  Node Live on Heroku: [Node 2] -> Might have to open in Incognito Window 🤦‍♂️ 
+  Node Live on Heroku: [Node 2] -> Might have to open in Incognito Window 🤦‍♂‍ 
   
 
 ## Test It Yourself 🛠
@@ -57,7 +57,7 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - Allows Chain replacement [BE]
   - Validates chain and incoming chains [BE]
   - Broadcasting chain on network [BE]
-  - Pagginated exploration of the Blocks within the chain [FE]
+  - Paginated exploration of the Blocks within the chain [FE]
 
 - ### Block
 
@@ -75,8 +75,8 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - In joint with Wallet class [BE]
   - Covered edge Cases to prevent vulnerabilities ( invalid amount, insufficient funds) [BE]
   - Reusable transaction component [FE]
-  - Post transaction throught frontend [FE]
-  - Known addresses are feautured in frontend and backend [BE] [FE]
+  - Post transaction throughout frontend [FE]
+  - Known addresses are featured in frontend and backend [BE] [FE]
 
 - ### Transaction Pool
 
@@ -92,7 +92,7 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - Transaction Miner class handles how miners "mine" transaction to the blockchain [BE]
   - Ability to grab valid transactions from the pool [BE]
   - Only unique transactions are mined (no duplicates) [BE]
-  - Able to mine transaction through GET equest via API [BE]
+  - Able to mine transaction through GET request via API [BE]
   - Validates incoming transaction balances [BE]
   - Can mine from pool in frontend [FE]
 
@@ -100,8 +100,8 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
 
   - Core wallet class [BE]
   - cryptographic key pairs (public key) & (private key) using [Elliptic] [BE]
-  - Signiture generation & verification for transaction verification [BE]
-  - Calculates wallet balnce based on the chain history [BE]
+  - Signature generation & verification for transaction verification [BE]
+  - Calculates wallet balance based on the chain history [BE]
 
 - ### Application
   
@@ -111,16 +111,16 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - Chain is synced when a new peer joins the network, new peers will have updated chain at moment of joining [BE]
   - Serving front end page using [Express] [FE]
   - Using React in the frontend using [parcel-bundler] [FE]
-  - Styling the application so its not barbones HTML [FE]
-  - Better Visualisation of the blocks from the chain [FE]
+  - Styling the application so it’s not barebones HTML [FE]
+  - Better Visualization of the blocks from the chain [FE]
   - Toggling transaction display [FE]
   - Added routing for a multi-page application using [react-router-dom] [FE]
 
 - ### Proof of Work
 
   - Proof of work system added, difficulty and nonce added to every block [BE]
-  - Smart scrypt that will adjust difficulty based on the MINE_RATE [BE]
-  - Hash 256 Incryptiong is in binary bit format for more accuracy on the difficulty [BE]
+  - Smart script that will adjust difficulty based on the MINE_RATE [BE]
+  - Hash 256 Encryption is in binary bit format for more accuracy on the difficulty [BE]
   - Patched jump attack exploit by adding extra validation step on the blockchain [BE]
 
 - ### API
@@ -147,3 +147,4 @@ This would not have been possible without the Udemy course https://www.udemy.com
 [Node 2]: <https://blooming-sands-21568.herokuapp.com/>
 [Preview of Code]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.06.50%20PM.png?token=AK6BS76343RNGFMK5MIHQDDA3UFJK>
 [Preview of Node-Peer]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.14.34%20PM.png?token=AK6BS7ZH5AJK3RXCLXJEKX3A3UFQA>
+![image](https://user-images.githubusercontent.com/45881727/124159538-46d94f00-da69-11eb-9a80-37924c265807.png)
