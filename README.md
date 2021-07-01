@@ -4,12 +4,7 @@
 
 This is a blockchain programmed from scratch. Project description along with how to run it yourself locally if you’d like to give it a go below. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognize when there has been a change on a respective channel.
 
-  Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A
-
-  Node Live on Heroku: [Node 1] -> Might have to open in Incognito Window 🤦‍♂‍ 
-
-  Node Live on Heroku: [Node 2] -> Might have to open in Incognito Window 🤦‍♂‍ 
-  
+  Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A  
 
 ## Test It Yourself 🛠
 
@@ -136,6 +131,11 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - /api/known-addresses
 
 This would not have been possible without the Udemy course https://www.udemy.com/build-blockchain-full-stack and the reference for the code https://github.com/15Dkatz/cryptochain. This was a course project and not an individual project.
+
+Heroku is not being reilable 100% time so, sorry if it does not load for you. :(
+  Node Live on Heroku: [Node 1] -> Might have to open in Incognito Window 🤦‍♂‍ 
+
+  Node Live on Heroku: [Node 2] -> Might have to open in Incognito Window 🤦‍♂‍ 
 
 [Redis]: <https://redis.io/>
 [Express]: <https://expressjs.com/>
