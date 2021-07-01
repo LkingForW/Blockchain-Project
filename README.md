@@ -6,9 +6,9 @@ This is a blockchain programmed from scratch. Project description along with how
 
   Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A
 
-  Node Live on Heroku: [Node 1]
+  Node Live on Heroku: [Node 1] -> Might have to open in Incognito Window 🤦‍♂️ 
 
-  Node Live on Heroku: [Node 2]
+  Node Live on Heroku: [Node 2] -> Might have to open in Incognito Window 🤦‍♂️ 
   
 
 ## Test It Yourself 🛠
