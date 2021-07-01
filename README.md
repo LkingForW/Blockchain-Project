@@ -47,7 +47,7 @@ This will run a second copy on an open port, this will have a broadcasted chain 
 
     You're finished and if everything went well, the project should be working !
 
-# Features
+# 🧩 Features 🧩
 
 Sub-features will be labeled as either [BE] Back End or [FR] Front End
 
