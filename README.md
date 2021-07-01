@@ -147,4 +147,4 @@ Heroku is not being reilable 100% time so, sorry if it does not load for you. :(
 [Node 2]: <https://blooming-sands-21568.herokuapp.com/>
 [Preview of Code]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.06.50%20PM.png?token=AK6BS76343RNGFMK5MIHQDDA3UFJK>
 [Preview of Node-Peer]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.14.34%20PM.png?token=AK6BS7ZH5AJK3RXCLXJEKX3A3UFQA>
-![image](https://user-images.githubusercontent.com/45881727/124159538-46d94f00-da69-11eb-9a80-37924c265807.png)
+
