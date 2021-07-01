@@ -135,6 +135,8 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - /api/wallet-info
   - /api/known-addresses
 
+This would not have been possible without the Udemy course https://www.udemy.com/build-blockchain-full-stack and the reference for the code https://github.com/15Dkatz/cryptochain. This was a course project and not an individual project.
+
 [Redis]: <https://redis.io/>
 [Express]: <https://expressjs.com/>
 [Elliptic]: <https://www.npmjs.com/package/elliptic>
