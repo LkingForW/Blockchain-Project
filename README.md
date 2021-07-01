@@ -1,4 +1,4 @@
-# Blockchain Project
+# 🪙  Blockchain Project 🪙  
 
 ## Description
 
@@ -11,6 +11,42 @@ This is a project description along with how to run it yourself localy if youd l
   Node Live on Heroku: [Node 2]
   
 
+## Test It Yourself 🛠
+
+If you have npm already installed in your machine and you have already cloned the project into a local directory.
+
+#### Step 1
+
+```bash
+npm install
+```
+
+This will install all the needed dependencies.
+
+#### Step 2
+
+```bash
+npm run dev
+```
+
+![Preview of Code](https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.06.50%20PM.png?token=AK6BS76343RNGFMK5MIHQDDA3UFJK)
+
+This will run a local instance of the project on your machine in http://localhost:3000/
+
+#### Step 3
+
+```bash
+npm run dev-peer
+```
+
+![Preview of Node-Peer](https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.14.34%20PM.png?token=AK6BS7ZH5AJK3RXCLXJEKX3A3UFQA)
+
+This will run a second copy on an open port, this will have a broadcasted chain in it so you will have to SCROLL UP ON THE TERMINAL to find the port it is running in.
+
+    🍾 Congrats!🍾
+
+    You're finished and if everything went well the project should be working !
+
 ## Features
 
 Sub-features will be labeled as either [BE] Back End or [FR] Front End
@@ -22,7 +58,6 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
   - Validates chain and incoming chains [BE]
   - Broadcasting chain on network [BE]
   - Pagginated exploration of the Blocks within the chain [FE]
-
 
 - ### Block
 
@@ -109,3 +144,5 @@ Sub-features will be labeled as either [BE] Back End or [FR] Front End
 [Preview]: <https://www.youtube.com/watch?v=xVQarGlAV2A>
 [Node 1]: <https://shrouded-escarpment-73920.herokuapp.com/>
 [Node 2]: <https://blooming-sands-21568.herokuapp.com/>
+[Preview of Code]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.06.50%20PM.png?token=AK6BS76343RNGFMK5MIHQDDA3UFJK>
+[Preview of Node-Peer]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.14.34%20PM.png?token=AK6BS7ZH5AJK3RXCLXJEKX3A3UFQA>
