@@ -45,7 +45,7 @@ This will run a second copy on an open port, this will have a broadcasted chain 
 
     🍾 Congrats!🍾
 
-    You're finished and if everything went well the project should be working !
+    You're finished and if everything went well, the project should be working !
 
 ## Features
 
