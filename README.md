@@ -4,7 +4,7 @@
 
 This is a blockchain programmed from scratch. Project description along with how to run it yourself locally if you’d like to give it a go below. This project supports basic functionality of a blockchain. It introduces the backend logic while also implementing a frontend and even having a distributed network. It works off a publisher/subscriber template that will allow nodes to recognize when there has been a change on a respective channel.
 
-  Video Link: [Preview] | https://www.youtube.com/watch?v=xVQarGlAV2A  
+  Video Link: [Preview] | https://youtu.be/-1OJhQetCI8 
 
 ## Test It Yourself 🛠
 
@@ -142,7 +142,7 @@ Heroku is not being reilable 100% time so, sorry if it does not load for you. :(
 [Elliptic]: <https://www.npmjs.com/package/elliptic>
 [parcel-bundler]: <https://www.npmjs.com/package/parcel-bundler>
 [react-router-dom]: <https://reactrouter.com/web/guides/quick-start>
-[Preview]: <https://www.youtube.com/watch?v=xVQarGlAV2A>
+[Preview]: <https://youtu.be/-1OJhQetCI8>
 [Node 1]: <https://shrouded-escarpment-73920.herokuapp.com/>
 [Node 2]: <https://blooming-sands-21568.herokuapp.com/>
 [Preview of Code]: <https://raw.githubusercontent.com/LkingForW/Pictures/main/Screen%20Shot%202021-06-30%20at%208.06.50%20PM.png?token=AK6BS76343RNGFMK5MIHQDDA3UFJK>
